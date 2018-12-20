@@ -11,7 +11,8 @@ export class LoginComponent implements OnInit {
 
   public username: string;
   public password: string;
-
+  public error: any;
+  public alert: boolean;
   constructor(private loginService: LoginService) {}
 
   ngOnInit() {}
@@ -19,9 +20,19 @@ export class LoginComponent implements OnInit {
 
   onSubmit(){
 
+    const myObserver = {
+        next: x => console.log('Observer got a next value: ' + x),
+        error: err => {
+              this.error = err.error.errorMessage;
+              this.alert = true;
+              this.password = "";
+             },
+        complete: () => console.log('Observer got a complete notification'),
+    };
+
     let user = { username: this.username, password: this.password };
 
-    this.loginService.iniciar_sesion(user);
+    this.loginService.iniciar_sesion(user).subscribe(myObserver);
 
   }
 
