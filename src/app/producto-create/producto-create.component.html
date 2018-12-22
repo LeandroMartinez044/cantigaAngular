@@ -1,3 +1,45 @@
-<p>
-  producto-create works!
-</p>
+<div class="container w-50">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="codigo">Codigo:</label>
+      <input type="text" class="form-control" name="" value="">
+    </div>
+
+    <div class="form-group">
+      <label for="codigo">Nombre(opcional):</label>
+      <input type="text" class="form-control" name="" value="">
+    </div>
+
+    <div class="form-group">
+      <label for="familia">Familia:</label>
+      <select class="form-control" id="sel1">
+        <option value=""></option>
+        <option value="calaustradas">Balaustradas</option>
+        <option value="complementos">Complementos</option>
+        <option value="bases">Bases</option>
+        <option value="columnas">Columnas</option>
+        <option value="estatuas">Estatuas</option>
+        <option value="figuras religiosas">Figuras religiosas</option>
+        <option value="fuentes">Fuentes</option>
+        <option value="mensulas">Ménsulas</option>
+        <option value="mensulas">Molduras</option>
+        <option value="mensulas">Rosetones</option>
+        <option value="terminales">Terminales</option>
+        <option value="categoria">Categoria</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="precio">Precio:</label>
+      <input type="text" class="form-control" name="" value="">
+    </div>
+    <div class="form-group">
+      <label for="descripcion">Descripcion:</label>
+      <textarea name="name"  class="form-control" rows="8" cols="80"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputFile">Subir imagen</label>
+      <input type="file" class="form-control-file" id="archivo" >
+    </div>
+    <button type="submit" class="btn btn-success" >Guardar</button>
+  </form>
+</div>

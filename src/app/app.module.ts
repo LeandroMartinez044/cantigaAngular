@@ -11,6 +11,9 @@ import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
 import { ProductoCreateComponent } from './producto-create/producto-create.component';
 import { ProductoUpdateComponent } from './producto-update/producto-update.component';
+import { ProductoReadComponent } from './producto-read/producto-read.component';
+import { ProductosComponent } from './productos/productos.component';
+import { ProductoDeleteComponent } from './producto-delete/producto-delete.component';
 
 
 const appRoutes: Routes = [
@@ -22,9 +25,15 @@ const appRoutes: Routes = [
       children: [
         {  path: 'Create', component: ProductoCreateComponent, outlet: 'productos' },
         {  path: 'Update', component: ProductoUpdateComponent, outlet: 'productos' },
+        {  path: 'Read', component: ProductoReadComponent, outlet: 'productos' },
+        {  path: 'Delete', component: ProductoDeleteComponent, outlet: 'productos' }
+
+
       ]
 
   }
+
+
 
 
 ];
@@ -35,7 +44,10 @@ const appRoutes: Routes = [
     LoginComponent,
     AdminComponent,
     ProductoCreateComponent,
-    ProductoUpdateComponent
+    ProductoUpdateComponent,
+    ProductoReadComponent,
+    ProductosComponent,
+    ProductoDeleteComponent
 
   ],
   imports: [
