@@ -23,17 +23,18 @@
         <a class="nav-link" href="#">Estadisticas</a>
       </li>
     </ul>
-    <div class="btn-group dropleft">
-      <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Right-aligned menu
-      </button>
-      <div class="dropdown-menu dropdown-menu-right">
-        <button class="dropdown-item" type="button">Action</button>
-        <button class="dropdown-item" type="button">Configuracion</button>
-        <div class="dropdown-divider"></div>
-        <button class="dropdown-item" type="button">Cerrar Sesion</button>
+
+      <div class="btn-group">
+        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{usuario.email}}
+        </button>
+        <div class="dropdown-menu dropdown-menu-right">
+          <button class="dropdown-item" type="button">Action</button>
+          <button class="dropdown-item" type="button">Another action</button>
+          <div class="dropdown-divider"></div>
+          <button class="dropdown-item" (click)="cerrarSession()" type="button">Salir</button>
+        </div>
       </div>
-    </div>
   </div>
 </nav>
 

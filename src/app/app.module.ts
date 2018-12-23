@@ -55,7 +55,8 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     FormsModule,
     HttpClientModule,
-    AlertModule.forRoot(),
+    AlertModule.forRoot()
+
 
 
   ],

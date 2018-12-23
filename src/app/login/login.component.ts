@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../services/login.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-login',
@@ -17,9 +19,12 @@ export class LoginComponent implements OnInit {
   public alert: boolean;
   public x: any;
 
-  constructor(private loginService: LoginService) {}
+  constructor(private loginService: LoginService, private router: Router) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+
+    localStorage.removeItem('isLoggedin');
+  }
 
 
 
@@ -31,8 +36,7 @@ export class LoginComponent implements OnInit {
 
     const myObserver = {
         next: x => {
-          console.log('Observer got a next value: ' + x);
-          this.x = x;
+            localStorage.setItem('isLoggedin', JSON.stringify(x));
         },
         error: err => {
 
@@ -45,7 +49,7 @@ export class LoginComponent implements OnInit {
                 this.password = "";
               }
         },
-        complete: () => console.log('Observer got a complete notification'),
+        complete: () => this.router.navigate(['admin']),
     };
 
     let user = { username: this.username, password: this.password };
